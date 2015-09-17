@@ -1,0 +1,48 @@
+name: Kadmin
+main: net.kylemc.kadmin.Kadmin
+version: 2.1.3
+
+depend: [Multiverse-Core]
+
+commands:
+   cwarps:
+      description: Accesses the Categorized Warps
+      usage: /cwarps [Category] [Page Number]
+   flower:
+      description: Allows you to flower a radius
+      usage: /flower <radius>
+   hoe_undo:
+      description: Undo's a rainbow action
+      usage: /hoe_undo
+   hoe_help:
+      description: Shows help for the rainbow hoe
+      usage: /hoe_help
+   hoe:
+      description: Renames a hoe
+      usage: /hoe [name]
+   ls:
+      description: Lists Online Players
+      usage: /ls
+   rename:
+      description: Renames a tool
+      usage: /rename <name>
+   quartz:
+      description: Trades 10 NetherRack for 1 Quartz
+      usage: /quartz
+   restart:
+      description: Restarts the server
+      usage: /restart
+
+permissions:
+  kadmin.*:
+    description: Gives access to all kadmin commands
+    children:
+      kadmin.ktp: true
+      kadmin.restart: true
+      kadmin.flower: true
+  kadmin.restart:
+    description: Restart the server
+    default: op
+  kadmin.flower:
+    description: Bonemeals a radius
+    default: op
